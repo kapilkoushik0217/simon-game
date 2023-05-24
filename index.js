@@ -67,3 +67,23 @@ function statover(){
     gamePattern=[];
     started=false;
 }
+$('body').click(function() {
+    $('#typer').focus();
+    $('#typer').select();
+
+});
+
+
+$('#typerForm').submit(function() {
+    //alert("submit");
+    setTimeout("$('#typer').focus();", 1000);
+    return false;
+});
+
+$('#typer').bind('keyup', function(e) {
+    var input = $.trim($(this).val());
+    // some lines of code..
+    $('#myInput').text(input);
+    //...
+    //$(this).val('').focus(); // clean up
+});
